@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel World Global Technologies</title>
+<style>
+    
+body {
+  margin:0; 
+  font-family:Poppins, sans-serif;
+  background:#031926 url('https://images.unsplash.com/photo-1445905595283-21f8ae8a33d2?auto=format&fit=crop&w=1500&q=80') center/cover fixed;
+  color:white;
+}
+
+/* Neon Glow */
+.header-glow { animation: neonPulse 2.5s infinite ease-in-out; }
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 10px #00eaff; }
+    50% { text-shadow: 0 0 30px #4df3ff; }
+    100% { text-shadow: 0 0 10px #00eaff; }
+}
+
+/* Light Sweep */
+.light-sweep { position:relative; overflow:hidden; }
+.light-sweep::after {
+    content:""; position:absolute; top:0; left:-120%;
+    width:100%; height:100%;
+    background:linear-gradient(110deg, transparent, rgba(255,255,255,0.45), transparent);
+    animation:sweep 3s infinite;
+}
+@keyframes sweep { 0%{left:-120%;} 100%{left:120%;} }
+
+/* Header */
+header { padding:40px 20px; text-align:center; }
+h1 { font-size:55px; font-weight:700; color:#9be8ff; }
+.sub { color:#b8f7ff; font-size:20px; margin-top:15px; }
+.owners { color:#9deaff; font-size:18px; margin-top:8px; }
+
+/* Nav */
+nav { background:#0a2a3a; padding:14px; text-align:center; }
+nav a { color:#9be8ff; margin:0 18px; text-decoration:none; font-weight:500; }
+
+/* Hero */
+.hero {
+  height:65vh; display:flex; justify-content:center; align-items:center;
+  background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  position:relative;
+}
+.hero::before { content:""; position:absolute; inset:0; backdrop-filter:brightness(0.4); }
+.hero-content { position:relative; text-align:center; }
+
+/* Sections */
+.section{ padding:60px 40px; text-align:center; }
+
+/* Services */
+.infosys-services { display:flex; flex-direction:column; gap:35px; }
+.infosys-card { 
+  background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.1);
+  padding:35px; border-radius:20px; display:flex; gap:30px;
+  align-items:center; cursor:pointer; transition:0.3s;
+}
+.infosys-card:hover { transform:scale(1.03); border-color:#00eaff; }
+.infosys-icon { font-size:65px; color:#00eaff; }
+
+.spec-box{
+  display:none; background:#0b2b3d; padding:20px;
+  border-left:3px solid #00eaff; border-radius:10px;
+}
+
+/* Contact */
+.contact-item { font-size:20px; margin:12px 0; display:flex; justify-content:center; gap:12px; align-items:center; }
+.contact-item span { font-size:24px; }
+
+/* Footer */
+footer{
+  text-align:center; padding:30px 20px 60px; margin-top:30px;
+}
+footer h3{ font-size:26px; text-shadow:0 0 13px #00eaff; }
+
+/* Contact */
+.contact-form { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding: 40px; border-radius: 15px; max-width: 600px; margin: auto; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+.contact-form label { display: block; margin: 15px 0 5px; color: #00c6ff; font-weight: 600; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 12px; border-radius: 10px; border: none; background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem; }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: #ccc; }
+.contact-form button { margin-top: 20px; padding: 12px 30px; border: none; border-radius: 10px; background: linear-gradient(90deg, #00c6ff, #0072ff); color: #fff; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-left: 45px; }
+.contact-form button:hover { opacity: 0.9; }
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 class="header-glow light-sweep">🌐 Pixel World Global Technologies</h1>
+  <p class="sub">Innovating the Future, One Pixel at a Time</p>
+  <p class="owners">Owned • Designed • Managed by Kishor Magar & Tejas Avhad</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+      <h1>Your Vision, Our Innovation</h1>
+      <p>Crafting next-generation digital products and solutions.</p>
+  </div>
+</section>
+
+<section id="services" class="section">
+<p style="color:#9be8ff; font-size:22px;">📈 Turning every small thing into something big.</p>
+<h2 class="section-title">Our Services</h2>
+
+<div class="infosys-services">
+
+<!-- SALES -->
+<div class="infosys-card" onclick="toggleSpecs('spec1')">
+<div class="infosys-icon">💻</div>
+<div><h3>Sales</h3><p>All types of IT hardware for home, business & enterprise.</p></div>
+</div>
+<div id="spec1" class="spec-box">
+<ul style="list-style:none; padding:0; line-height:1.8;">
+<li>✔ Laptops & Desktops</li>
+<li>✔ Printers & Cartridges</li>
+<li>✔ Networking Devices</li>
+<li>✔ CCTV Systems</li>
+<li>✔ IT Accessories</li>
+</ul>
+</div>
+
+<!-- MAINTENANCE -->
+<div class="infosys-card" onclick="toggleSpecs('spec2')">
+<div class="infosys-icon">🛠️</div>
+<div><h3>Maintenance & Service</h3><p>Professional IT repair and setup services.</p></div>
+</div>
+<div id="spec2" class="spec-box">
+<ul style="list-style:none; padding:0; line-height:1.8;">
+<li>✔ Laptop / Computer Repair</li>
+<li>✔ OS Installation</li>
+<li>✔ Software Setup</li>
+<li>✔ Virus Removal</li>
+<li>✔ Optimization</li>
+</ul>
+</div>
+
+<!-- AMC FIXED -->
+<div class="infosys-card" onclick="toggleSpecs('spec3')">
+<div class="infosys-icon">🔧</div>
+<div>
+    <h3>AMC Services</h3>
+    <p>Annual maintenance with priority support.</p>
+</div>
+</div>
+
+<div id="spec3" class="spec-box">
+<ul style="list-style:none; padding:0; line-height:1.8;">
+<li>✔ Home AMC</li>
+<li>✔ Business AMC</li>
+<li>✔ Printer AMC</li>
+<li>✔ Networking Support</li>
+<li>✔ Regular IT Checkups</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="section">
+<h2>About Us</h2>
+<p>We expedite business growth through innovation, creativity, and high-performance development.</p>
+</section>
+
+<section id="contact" class="section">
+<h2>Let's Connect</h2>
+
+<div class="contact-form">
+          <form id="contactForm">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Your email" required>
+
+              <label for="number"> Mobile Number</label>
+              <input id="number"  placeholder="Mobile number" required>
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Type-Message" required></textarea>
+
+              <button type="submit">Send Message</button>
+          </form>
+           <p id="formMessage" class="form-message"></p>
+      </div>
+<br>
+<div class="contact-item">
+<span>📧</span> Email: pixelworldglobal.info@gmail.com
+</div><br>
+
+
+<h3 style="margin-top:35px; margin-bottom:15px; font-size:26px; text-shadow:0 0 12px #00eaff;">🕒 Business Hours</h3>
+
+<div class="contact-item">
+<span>🗓️</span> Monday – Sunday
+</div>
+
+<div class="contact-item"><br>
+<span>🕒</span> Timing: 10:00 AM – 6:30 PM
+</div>
+
+</section>
+
+<footer>
+<h3>PIXEL WORLD GLOBAL TECHNOLOGIES</h3><br>
+<p>Delivering Excellence in IT • Since 2025</p>
+<p>© 2025 Pixel World Global Technologies. All rights reserved.</p>
+</footer>
+
+<script>
+ function toggleSpecs(id){
+    const box = document.getElementById(id);
+    box.style.display = box.style.display === 'block' ? 'none' : 'block';
+}
+
+// Google Apps Script Web App URL
+const scriptURL = "https://script.google.com/macros/s/AKfycbxEUzmsfM76JjYBdtieGg7nnoBhZUNeJPrM7paY465NIkl6mW08OQeWnRFyc-QYOBny/exec";
+
+const form = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const data = {
+        name: form.name.value,
+        email: form.email.value,
+        number: form.number.value,  // ✅ mobile number added
+        message: form.message.value
+    };
+
+    fetch(scriptURL, {
+        method: "POST",
+        contentType: "application/json",
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(result => {
+        if (result.result === "success") {
+            formMessage.textContent = "Your response has been submitted!";
+            formMessage.classList.remove("error");
+            formMessage.style.display = "block";
+            form.reset();
+        } else {
+            formMessage.textContent = "Error: " + result.error;
+            formMessage.classList.add("error");
+            formMessage.style.display = "block";
+        }
+    })
+    .catch(err => {
+        formMessage.textContent = "Error sending message. Try again!";
+        formMessage.classList.add("error");
+        formMessage.style.display = "block";
+        console.error(err);
+    });
+});
+
+
+ 
+</script>
+</body>
+</html>
